@@ -52,4 +52,4 @@ DC_CONFIG[:PHOTOSTORE] = "/home/patrick/sites/decade-images/"
 DC_CONFIG[:PHOTOBASE] = "http://decade.geek.nz/"
 DC_CONFIG[:PHOTOFANCY] = true
 DC_CONFIG[:BASE] = "http://decade.geek.nz/"
-DC_CONFIG[:ASSETSBASE] = 'http://cdn.mac.nz/decade/'
+DC_CONFIG[:ASSETSBASE] = 'http://cdn.m.ac.nz/decade/'
