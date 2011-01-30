@@ -1,0 +1,46 @@
+xml.instruct!
+
+xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/",
+  "xmlns:content" => "http://purl.org/rss/1.0/modules/content/" do
+    
+	xml.channel do
+	  
+    xml.title("The Decade Project Atom")
+  	xml.link(root_url)
+  	xml.language('en-AU')
+  	xml.webMaster('Patrick Quinn-Graham')
+  	xml.copyright('Copyright 2004-' + Time.now.year.to_s + ' Patrick Quinn-Graham')
+  	xml.ttl('60')
+  	xml.pubDate(CGI.rfc1123_date(@images.first.updated_at)) if @images.any?
+  	xml.description('The daily photo project.')
+
+    for img in @images do
+      xml.item do
+        xml.title img.caption
+        xml.link img.permalink(true)
+        xml.pubDate CGI.rfc1123_date(img.date.to_time)
+        xml.guid img.permalink(true)
+        xml.author "Patrick Quinn-Graham"
+        xml.description do 
+          xml.cdata! %Q(
+            #{ img.flickr_url && '<a href="' + img.flickr_url + '">' }
+              <img src="#{ img.full_path_url }" alt="#{ img.caption }"><br>
+              #{ img.description }
+            #{ img.flickr_url && '</a>' }
+          )
+        end
+        xml.tag!("content:encoded") do
+          xml.cdata! %Q(
+            #{ img.flickr_url && '<a href="' + img.flickr_url + '">' }
+              <img src="#{ img.full_path_url }" alt="#{ img.caption }"><br>
+              #{ img.description }
+            #{ img.flickr_url && '</a>' }
+          )
+        end
+      end
+    end
+  	
+	end
+	
+end
+

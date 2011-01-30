@@ -1,0 +1,35 @@
+<%= error_messages_for 'image' %>
+
+<table class="form" cellpadding="0" cellspacing="0">
+  
+  <% if @image.new_record? -%>
+  <tr><td class="labels"><label for="decade_date">Date</label></td><td class="fields">
+    <%= f.date_select :date %>
+  </td></tr>
+  <% else %>
+  <tr><td class="labels"><label for="decade_date">Date</label></td><td class="fields">
+    <%= @image.date %>
+  </td></tr>
+  <% end -%>
+
+  <tr><td class="labels"><label for="decade_description">Flickr ID</label></td><td>
+    <%= f.text_field :photo_id, :size => 58, :class => 'normal_i_width' -%></td></tr>
+
+  <tr><td class="labels"><label for="decade_caption">Title</label></td><td class="fields">
+    <%= f.text_field :caption, :size => 58, :class => 'normal_i_width' -%></td></tr>
+
+  <tr><td><label for="decade_description">Description</label></td><td>
+    <%= f.text_area :description, :rows => '4', :wrap => 'virtual', :class => 'normal_i_width' %><br/>
+
+
+
+  <tr><td class="labels"><label for="decade_description">Full Image</label></td><td>
+    <%= f.text_field :full_path_url, :size => 58, :class => 'normal_i_width' -%></td></tr>
+  
+  <tr><td class="labels"><label for="decade_description">Thumbnail</label></td><td>
+    <%= f.text_field :thumbnail_url, :size => 58, :class => 'normal_i_width' -%></td></tr>
+  
+  <tr><td class="labels"><label for="decade_description">Flickr URL</label></td><td>
+    <%= f.text_field :flickr_url, :size => 58, :class => 'normal_i_width' -%></td></tr>
+
+</table>

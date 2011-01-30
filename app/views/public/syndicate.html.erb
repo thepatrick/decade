@@ -1,0 +1,30 @@
+<div class="page">
+<h2>Syndicate/Subscribe to The Decade Project</h2>
+
+<div class="aboutframe">
+    
+    <h3>Options</h3>
+    
+    <p>
+        The Decade Project is available as an <%= link_to 'RSS 2.0', syndicate_url(:rss) %> or
+        <%= link_to 'Atom', syndicate_url(:atom) %> feed, if you have a suitable
+        RSS/Atom aggregator, such as <a href="http://www.ranchero.com/">NetNewsWire</a>. 
+		These feeds should show the image in our aggregator. You can also subscribe to the
+		RSS 2.0 feed using iPhoto. 
+    </p>
+    
+    <p>
+        If you are a LiveJournal user, it is also syndicated there as
+        <a href="http://www.livejournal.com/~pftqg_decade/">pftqg_decade</a>.
+        View <a href="http://www.livejournal.com/~pftqg_decade/info">Syndication
+        Information</a> on LiveJournal to subscribe.
+    </p>
+    
+    <p>
+        RSS Feed: <code><%= link_to syndicate_url(:rss), syndicate_url(:rss) %></code><br/>
+        Atom Feed: <code><%= link_to syndicate_url(:atom), syndicate_url(:atom) %></code><br/>
+    </p>
+    
+        
+</div>
+</div>

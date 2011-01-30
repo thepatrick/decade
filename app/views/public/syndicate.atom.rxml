@@ -1,0 +1,33 @@
+xml.instruct!
+
+xml.feed "xmlns" => "http://www.w3.org/2005/Atom", "xml:lang" => "en",
+  "xml:base" => root_url do
+    
+    xml.id syndicate_url(:atom)
+	  
+    xml.title("The Decade Project")
+  	xml.link(root_url)
+  	
+  	xml.link(syndicate_url(:atom), :rel => "self")
+  	
+  	xml.author do
+  	  xml.name "Patrick Quinn-Graham"
+  	end
+  	
+  	xml.updated(@images.first.updated_at.strftime("%Y-%m-%dT%H:%M:%SZ")) if @images.any?
+
+    for img in @images do
+      xml.entry do
+        xml.id img.permalink(true)
+        xml.title img.caption
+        xml.link "", :href => img.permalink(true)
+        xml.updated img.updated_at.strftime("%Y-%m-%dT%H:%M:%SZ")
+        
+        xml.summary img.description
+        
+        xml.content :type => "image/jpeg", :src => img.full_path_url
+        
+      end
+    end
+  
+end

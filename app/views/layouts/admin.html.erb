@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title><%= 'Decade' %></title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<%= stylesheet_link_tag '/stylesheets/admin.css' %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body<% if @onload %> onload="doFieldSelect(<%= @onload %>);"<% end %>>
+    
+<% if @update_checker -%>
+<div id="message">
+    <%= @update_checker %>
+</div>
+<% end -%>
+
+
+<div id="admin_nav">
+	<ul class="navlist">
+		<li><a accesskey="1" href="/images" title="Images">Images</a></li>
+		<li class="end"><a accesskey="1" href="/images/new" title="New Image">New Image</a></li>
+	</ul>
+	<ul class="navlist right">
+		<li><a accesskey="l" href="/knox/gate/logout" title="Logout">Logout</a></li>
+		<li class="end"><a accesskey="v" href="/" target="_blank" title="View Site">View Site</a></li>
+	</ul><br/>
+</div>
+	
+<div id="box">
+	<%= yield %>
+</div>
+
+</body>
+</html>

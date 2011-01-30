@@ -1,0 +1,27 @@
+<div class="tracker">
+	<%= link_to "Archive", '/archive' %> &raquo;
+	<%= @imgs.first.date.year %>
+</div>
+
+<ul class="monthView">
+<%
+month = nil;
+for img in @imgs
+%>
+  <% if month != img.date.month %>
+    <% month = img.date.month%>
+    <li class="title" id="month-<%= month -%>"><%= img.date.strftime("%B") %></li>  
+  <% end %>
+	<li>	
+		<a href="<%= img.permalink %>"><img src="<%= img.thumbnail_url %>"/>
+		    <span class="caption">
+			   <%= img.date.strftime("%d") %><%= ": " unless img.caption.blank? %><%= img.caption %>
+		    </span>
+		</a>
+	</li>
+<%
+end
+%>
+</ul>
+
+<br style="clear: both; "/>

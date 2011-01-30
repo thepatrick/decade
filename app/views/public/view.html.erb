@@ -1,0 +1,8 @@
+<div class="tracker">
+	<%= link_to(@img.date.strftime("%Y"), '/' + @img.date.year.to_s) %> &raquo; 
+	<%= link_to(@img.date.strftime("%B %d"), "/#{@img.date.year}/#{@img.date.month}") %> &raquo; 
+	<%= @img.caption %>
+</div>
+
+<%= render :partial => 'photo' %>
+<br style="clear: both; ">

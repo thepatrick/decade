@@ -1,0 +1,7 @@
+<div class="photoframe">
+  <div class="photo">
+    <% if @img.flickr_url %><a href="<%= @img.flickr_url -%>"><% end -%>
+      <img src="<%= @img.full_path_url %>" alt="<%=h @img.caption %>" />
+    <% if @img.flickr_url %></a><% end -%>
+  </div>
+</div>

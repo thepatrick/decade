@@ -1,0 +1,267 @@
+/* @override 
+	http://decade.geek.nz/c/style.css
+	http://localhost:3000/c/style.css
+*/
+
+/*
+	d2-1.0 - daily photo blog software
+	Copyright (C) 2004-2006 Patrick Quinn-Graham <decade@pftqg.com>
+*/
+@media screen {
+    body {
+        background-image: none;
+        background-color: #1D242C;
+        margin: 0px;
+    font-family: "Lucida Grande", verdana, "Bitstream Vera Sans", lucida, arial, helvetica, sans-serif;
+    }
+    a img {
+        border: 0px;
+    }
+    .logozone {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        background-color: #2D3741;
+    }
+	.logodiv {
+        width: 200px;
+        height: 60px;
+        background-image: url(../i/logo.png);
+    }
+    .logodiv * {
+        display: none;
+    }
+	.menuHolder, .navigator {
+	   margin-bottom: 20px;
+	   padding-bottom: 20px;
+	}
+	.menu {
+        margin: 0;
+        white-space: nowrap;
+        padding: 0;
+	}
+	.menu li {
+		display: inline;
+		width: 99.99%;
+	}
+	.menu li a {
+		margin: 0px;
+		display: block;
+		color: #777;
+		padding-left: 20px; 
+		padding-top: 4px;
+		padding-bottom: 4px;
+		font-weight: normal;
+		text-decoration: none;
+		font-size: 0.6em;
+		text-align: left;
+	}
+	.menu li a:hover {
+        color: #fff;
+		text-decoration: underline;
+	}
+	.menuHolder br, .menu2Holder br {
+        display: none;
+        height: 1px;
+        overflow: hidden;
+	}    
+	.navigator {
+		padding-left: 20px; 
+		padding-right: 20px;
+		margin: 0px;
+		color: #777;
+		font-weight: normal;
+		text-decoration: none;
+		font-size: 0.6em;
+		text-align: left; 
+		line-height: 2em;
+	}
+    .menu2 {
+        display: inline;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .menu2 li {
+        display: inline;
+    }
+    .menu2 li+li:before {
+        content: ', ';
+        margin-left: -2px;
+    }
+    .menu2 li a {
+		color: #777;
+    }
+    .details {
+        background-color: #0D141C;
+		border-bottom: 1px solid #5D646C;   
+		padding-top: 20px;
+		padding-bottom: 20px; 
+		margin-bottom: 20px;
+    }
+    .details h2 {
+        padding-left: 10px;
+        padding-right: 5px;
+        padding-bottom: 10px;
+        margin-left: 20px;
+        font-size: 0.8em;
+		color: #ddd;
+		border-bottom: 1px dotted #3D444C;
+    }
+    .details p {
+        padding-left: 30px;
+        padding-right: 20px;
+        font-size: 0.7em;
+        line-height: 2em;
+		color: #ddd;
+    } 
+    .details p.date {
+        font-size: 0.65em;
+    }    
+    .copyright {
+        font-size: 0.5em;
+        color: #999;
+        padding-left: 10px;
+        padding-right: 10px;
+        line-height: 1.8em;
+    }
+    .page {
+		position:  absolute;
+		left:  240px;
+		top: 40px;
+		width: 500px;
+        color: #aaa;
+    }
+    .page a {
+        color: #eee;
+        text-decoration: underline;
+    }
+    /***************/
+    .tracker {
+		position: absolute;
+        top: 20px;
+        left: 220px;
+        font-size: 0.7em;
+        color: #999;
+        text-align: left;
+        margin-bottom: 0px;
+        width: 300px;
+    }
+    .photoframe {
+        /*clear: both;*/
+        position: absolute;
+        top: 67px;
+        left: 265px;
+        padding-right: 55px;
+        padding-bottom: 55px;
+        color: #aaa;
+    }
+    .photo img {
+        border: 1px solid #bbb;
+        background-color: #3D444C;
+        border: 1px solid #4D545C;
+        padding: 15px;
+    }
+    .copyright a, .tracker a {
+        color: #999;
+    }    
+	ul {
+	   margin-top: 0px;
+       margin-bottom: 20px;
+       padding: 0px;
+	}
+	ul li {
+       padding: 0px;
+       margin: 10px 0px;
+	   list-style: none;	
+	   text-align: left;
+	}
+	ul.monthView {
+	   margin: 0;
+       padding: 0px;
+       position:  absolute;
+       top: 80px;
+       left: 220px;
+	}
+	ul.monthView li {
+	   float: left;
+	}
+	ul.monthView li.title {
+		clear: both;
+		width: 100%;
+		border-bottom: 1px dotted #5D646C;
+		color: #aaa;
+	}
+	ul.monthView li a {
+	   width: 188px;
+	   height: 116px;
+	   overflow: hidden;
+	   text-decoration: none;
+	}
+	ul.monthView li a img {
+	   margin: 0px;
+	   padding: 0px;
+	   display: block;
+	   padding-right:  20px;
+	   padding-top: 20px;
+	}
+	ul.monthView li .caption {
+	   display: block;
+	   margin: 0px;
+	   height: 16px;
+	   color: #7794B5;
+	   font-size: 0.9em;
+	   padding-top:  3px;
+	   padding-left: 3px;
+	   width: 185px;
+	   font-size: 0.7em;
+	}
+	.aboutframe {
+	   width: 400px;
+	   text-align: left;
+	   font-size: 0.7em;
+	   line-height: 2.0em;
+	}
+	.pom {
+	   margin-left: 50px;
+	   margin-right: 50px;
+	}
+	.printcopy {
+	   display: none;
+	}
+	.photoframe form div {
+		margin: 10px 0px;
+	}
+	.photoframe form input {
+		font-size: 1.2em;
+		padding: 0.4em;
+	}
+	.photoframe h1 {
+		 color: #fff;
+	}
+	
+	.flash {
+		margin: 10px 0;
+		border: 1px solid #000;
+		padding: 10px;
+	}
+	
+	.green.flash {
+		color: #87ff00;
+		font-weight: lighter;
+		font-size: 0.9em;
+		border-color: #87ff00;
+	}
+	
+	.super .labels {
+		padding: 5px 0;
+		width: 100px;
+	}
+	
+	.super .submit {
+	    margin-top: 10px;
+		margin-left: 82px;
+	}
+	}
+}

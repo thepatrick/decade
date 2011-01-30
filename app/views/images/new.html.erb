@@ -1,0 +1,21 @@
+<div class="page">
+  <div id="header">
+  	<p>Required fields in <b>bold</b>.</p>
+  	<% if flash[:notice] %><div class="green flash"><b>Success:</b> <%= flash[:notice] %></div><% end -%>
+  </div>
+  
+  <table class="super aboutframe" cellspacing="0" cellpadding="0">
+  	<tr>
+  		<td valign="top" class="no_pad" style="width: 580px;">
+
+        <% form_for @image do |f| %>
+  			  <%= render :partial => 'form', :locals => { :f => f } %>
+  			  <%= submit_tag 'Create this Photo', :class => 'submit' %>
+  			<% end %>
+
+  		</td>
+
+  	</tr>
+  </table>
+  <br/>
+</div>

@@ -1,0 +1,19 @@
+<div class="tracker">
+	Archive
+</div>
+
+
+<div class="page">
+
+<ul>
+<%
+for year in @start_year..@end_year
+%>
+	<li><%= link_to (year, "/#{year}") %></li>
+<%
+end
+%>
+</ul>
+
+</div>
+<br style="clear: both; "/>

@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<!--
+	Copyright (C) 2002-2011 Patrick Quinn-Graham, All Rights Reserved.
+	Please feel free to learn from this code, but please don't steal the design.
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title><%= (@pgtitle + " - ") unless @pgtitle.nil? %>Project Decade</title>
+
+<link rel="alternate" type="application/atom+xml" title="Atom" href="/syndicate.atom" />
+	
+<style type="text/css">
+@import url( <%= DC_CONFIG[:ASSETSBASE] -%>c/style.css );
+</style>
+
+</head>
+
+<body>
+
+<div class="logozone">
+
+    <div class="logodiv"><h1>decade</h1>
+    <div class="tagline">one geek's life in photographs</div></div>
+
+<div class="details">
+<% if @img.nil? %>
+    <h2><%= @pgtitle %></h2>
+    <p>
+    </p>
+<% else %>
+    <h2><%= @img.caption %></h2>
+    <p>
+        <%= @img.description %>
+    </p>
+    <p class="date"><%= @img.date.strftime('%d %B, %Y') %></p>
+<% end %>
+</div>
+
+
+
+<div class="navigator">
+    <ul class="menu2">
+<% if (!@links.nil?)
+	for link in @links -%>
+	   <li><a href="<%= link.permalink %>"><%= link.date.strftime("%A") %></a></li>
+<% end 
+ end %>
+
+<% if @show_prevNext %>
+<% unless @img.prev.nil? %>
+	<li>&laquo; <%= link_to "Previous", @img.prev.permalink %></li>
+<% end %>
+<% unless @img.next.nil? %>
+	<li><%= link_to "Next", @img.next.permalink %> &raquo;</li>
+<% end %>
+<% end %>
+    </ul>
+</div>
+
+<div class="menuHolder">
+    <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/archive">Archive</a></li>
+        <li><a href="/syndicate">Subscribe/Syndicate</a></li>
+        
+        <% if current_user %>
+          <li>&nbsp;</li>
+          <li><%= link_to 'New image', new_image_path %></li>
+          <% if @img %>
+            <li><%= link_to 'Edit image', @img %></li>
+          <% end %>        
+          <li><%= link_to 'Logout', logout_gate_path %></li>
+        <% end %>
+    </ul>
+    <br style="clear: both;" />
+</div>
+
+
+<div class="copyright">
+	<p>
+        Copyright &copy; 2004-2011 <br/>
+        <a href="http://thepatrick.com.au/">Patrick Quinn-Graham</a>. 
+<a href="http://www.technorati.com/profile/pftqg/5892183/7b238112edea2382e71e2a49e11631a2">Technorati</a>.<br/>
+	      <a href="http://creativecommons.org/licenses/by/3.0/">Some rights reserved</a>. <%= link_to('Login', new_gate_path) + "." unless current_user %>
+    </p>
+</div>  
+
+</div>
+
+
+<%= yield %>
+
+
+
+
+<div class="printcopy">
+<hr />
+<p>Printed from The Decade Project (www.decade.geek.nz). <br/>
+   The contents are licensed under the Creative Commons
+   Attribution 3.0 license.<br/>
+   See http://creativecommons.org/licenses/by/3.0/
+   for details.</p>
+<hr />
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-340421-3";
+urchinTracker();
+</script>
+</body>
+</html>
