@@ -73,6 +73,7 @@
           <li><%= link_to 'New image', new_image_path %></li>
           <% if @img %>
             <li><%= link_to 'Edit image', @img %></li>
+            <li><%= link_to 'Delete image', @img, :method => :delete %></li>
           <% end %>        
           <li><%= link_to 'Logout', logout_gate_path %></li>
         <% end %>
