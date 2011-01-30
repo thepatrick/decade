@@ -61,7 +61,11 @@ class PublicController < ApplicationController
   
   def year
     year = params[:y]
-    @imgs = Image.where('date like ?', "#{year}-%").order('date ASC').all
+    if Rails.env.production?
+      @imgs = Image.where('date > ? and date < ?', "#{year.to_i - 1}-12-31", "#{year.to_i + 1}-01-01").order('date ASC').all
+    else
+      @imgs = Image.where('date like ?', "#{year}-%").order('date ASC').all
+    end
     raise ActiveRecord::RecordNotFound if @imgs.empty?
     @pgtitle = @imgs.first.date.strftime("%Y") + " Archives"
   end   
