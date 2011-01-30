@@ -17,6 +17,9 @@
 @import url( <%= DC_CONFIG[:ASSETSBASE] -%>c/style.css );
 </style>
 
+<% if current_user %>
+<%= javascript_include_tag :defaults %>
+<% end %>
 </head>
 
 <body>
