@@ -9,3 +9,4 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'httparty'
 
 gem "authlogic"
+gem "rails3-generators"
