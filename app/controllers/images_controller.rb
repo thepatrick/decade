@@ -17,7 +17,7 @@ class ImagesController < ApplicationController
   def create
     @image = Image.new params[:image]
     if @image.save
-      redirect_to edit_image_path(@image)
+      redirect_to @image.permalink
     else
       render :action => :new
     end
