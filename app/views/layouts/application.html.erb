@@ -10,19 +10,25 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><%= (@pgtitle + " - ") unless @pgtitle.nil? %>Project Decade</title>
     <link rel="alternate" type="application/atom+xml" title="Atom" href="/syndicate.atom" />
+    
+		<script type="text/javascript" src="http://use.typekit.com/urd7xcf.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    
 	  <style type="text/css">
-      @import url( <%= DC_CONFIG[:ASSETSBASE] -%>c/style.css );
+      @import url( <%= DC_CONFIG[:ASSETSBASE] -%>c/style.css?2011020901 );
     </style>
     <% if current_user %><%= javascript_include_tag :defaults %>
     <%= csrf_meta_tag %>
     <% end -%>
   </head>
   <body>
+    <div class="logodiv">
+      <h1>project <strong>decade</strong></h1>
+      <div class="tagline">one geek's life in photographs</div>
+    </div>
+    
+    
     <div class="logozone">
-      <div class="logodiv">
-        <h1>decade</h1>
-        <div class="tagline">one geek's life in photographs</div>
-      </div>
       <div class="details">
       <% if @img.nil? %>
         <h2><%= @pgtitle %></h2>
@@ -69,14 +75,13 @@
       </ul>
       <br style="clear: both;" />
     </div>
-    <div class="copyright">
-    	<p>
-        Copyright &copy; 2004-2011 <br/>
-        <a href="http://thepatrick.com.au/">Patrick Quinn-Graham</a>. 
-<a href="http://www.technorati.com/profile/pftqg/5892183/7b238112edea2382e71e2a49e11631a2">Technorati</a>.<br/>
-	      <a href="http://creativecommons.org/licenses/by/3.0/">Some rights reserved</a>. <%= link_to('Login', new_gate_path) + "." unless current_user %>
-     </p>
-    </div>
+  </div>
+  <div class="copyright">
+  	<p>
+      Copyright &copy; 2004-2011
+      <a href="http://thepatrick.com.au/">Patrick Quinn-Graham</a>. 
+      <a href="http://creativecommons.org/licenses/by/3.0/">Some rights reserved</a>. <%= link_to('Login', new_gate_path) + "." unless current_user %>
+   </p>
   </div>
 
     <%= yield %>

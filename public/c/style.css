@@ -8,28 +8,46 @@
 	Copyright (C) 2004-2006 Patrick Quinn-Graham <decade@pftqg.com>
 */
 @media screen {
+	.normal, body {
+  		font: 16px/1.5 "myriad-pro-1", "myriad-pro-2", Helvetica, Arial, sans-serif;
+  		font-weight: lighter;
+  	}
+  
     body {
         background-image: none;
-        background-color: #1D242C;
+	    background: #05050a;
         margin: 0px;
-    font-family: "Lucida Grande", verdana, "Bitstream Vera Sans", lucida, arial, helvetica, sans-serif;
     }
     a img {
         border: 0px;
     }
     .logozone {
         position: absolute;
-        top: 0;
+        top: 70px;
         left: 0;
-        width: 200px;
-        background-color: #2D3741;
+        width: 265px;
     }
 	.logodiv {
-        width: 200px;
-        height: 60px;
-        background-image: url(../i/logo.png);
+		position: absolute;
+		top: 0;
+		left: 0;
+        width: 400px;
+        height: 100px;
+        z-index: 9999;
     }
-    .logodiv * {
+    .logodiv h1 {
+		font-weight: lighter;
+		color: #fff;
+		margin: 0;
+		padding: 5px 30px;
+		font-size: 2.8em;
+		letter-spacing: -1px;
+		font-weight: 100;
+	}
+	.logodiv h1 strong {
+		font-weight: bolder;
+	}
+    .logodiv .tagline {
         display: none;
     }
 	.menuHolder, .navigator {
@@ -37,7 +55,7 @@
 	   padding-bottom: 20px;
 	}
 	.menu {
-        margin: 0;
+        margin: 0 0 0 10px;
         white-space: nowrap;
         padding: 0;
 	}
@@ -48,13 +66,11 @@
 	.menu li a {
 		margin: 0px;
 		display: block;
-		color: #777;
+		color: #fff;
 		padding-left: 20px; 
 		padding-top: 4px;
 		padding-bottom: 4px;
-		font-weight: normal;
 		text-decoration: none;
-		font-size: 0.6em;
 		text-align: left;
 	}
 	.menu li a:hover {
@@ -67,13 +83,12 @@
         overflow: hidden;
 	}    
 	.navigator {
-		padding-left: 20px; 
-		padding-right: 20px;
+		padding-left: 30px; 
+		padding-right: 0;
 		margin: 0px;
-		color: #777;
-		font-weight: normal;
+		color: #fff;
 		text-decoration: none;
-		font-size: 0.6em;
+		font-size: 0.9em;
 		text-align: left; 
 		line-height: 2em;
 	}
@@ -89,50 +104,70 @@
     .menu2 li+li:before {
         content: ', ';
         margin-left: -2px;
+        color: #777;
     }
     .menu2 li a {
-		color: #777;
+		color: #fff;
+		text-decoration: none;
     }
     .details {
-        background-color: #0D141C;
-		border-bottom: 1px solid #5D646C;   
-		padding-top: 20px;
+		padding-top: 0;
 		padding-bottom: 20px; 
 		margin-bottom: 20px;
     }
     .details h2 {
+		margin: 0;
         padding-left: 10px;
-        padding-right: 5px;
-        padding-bottom: 10px;
         margin-left: 20px;
         font-size: 0.8em;
-		color: #ddd;
-		border-bottom: 1px dotted #3D444C;
-    }
+		color: #fff;
+		font-size: 1.8em;
+		font-weight: 100;
+		text-transform: lowercase;
+	}
     .details p {
+		margin: 0;
+		padding-top: 5px;
         padding-left: 30px;
         padding-right: 20px;
-        font-size: 0.7em;
         line-height: 2em;
-		color: #ddd;
+		color: #eee;
     } 
     .details p.date {
-        font-size: 0.65em;
+		font-size: 0.9em;
     }    
     .copyright {
-        font-size: 0.5em;
-        color: #999;
-        padding-left: 10px;
-        padding-right: 10px;
-        line-height: 1.8em;
+		position: fixed;
+        font-size: 0.8em;
+        color: #fff;
+        padding: 0 10px;
+        margin: 0;
+        line-height: 0.8em;
+        bottom: 20px;
+        right: 20px;
+        z-index: 999;
+        text-align: right;
     }
     .page {
 		position:  absolute;
 		left:  240px;
-		top: 40px;
+		top: 120px;
 		width: 500px;
-        color: #aaa;
+        color: #fff;
     }
+    .page h2 {
+		font-weight: 100;
+		font-size: 3.0em;
+		text-transform: lowercase;
+		margin-top: 0;
+	}
+	.page h3 {
+		font-weight: 100;
+		font-size: 2.0em;
+		text-transform: lowercase;
+		margin-top: 0;
+		margin-bottom: 5px;
+	}
     .page a {
         color: #eee;
         text-decoration: underline;
@@ -141,30 +176,26 @@
     .tracker {
 		position: absolute;
         top: 20px;
-        left: 220px;
-        font-size: 0.7em;
-        color: #999;
-        text-align: left;
+        right: 20px;
+        color: #fff;
+        text-align: right;
         margin-bottom: 0px;
         width: 300px;
+        z-index: 999;
     }
+    .tracker a {
+		color: #fff;
+	}
     .photoframe {
-        /*clear: both;*/
         position: absolute;
-        top: 67px;
+        top: 0;
         left: 265px;
         padding-right: 55px;
         padding-bottom: 55px;
         color: #aaa;
     }
-    .photo img {
-        border: 1px solid #bbb;
-        background-color: #3D444C;
-        border: 1px solid #4D545C;
-        padding: 15px;
-    }
-    .copyright a, .tracker a {
-        color: #999;
+    .copyright a {
+        color: #fff;
     }    
 	ul {
 	   margin-top: 0px;
@@ -218,9 +249,7 @@
 	   font-size: 0.7em;
 	}
 	.aboutframe {
-	   width: 400px;
 	   text-align: left;
-	   font-size: 0.7em;
 	   line-height: 2.0em;
 	}
 	.pom {
