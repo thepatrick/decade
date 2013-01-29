@@ -1,6 +1,7 @@
 /* @override 
 	http://decade.geek.nz/c/style.css
 	http://localhost:3000/c/style.css
+	http://cdn.m.ac.nz/decade/c/style.css?2011020901
 */
 
 /*
@@ -20,6 +21,7 @@
     }
     a img {
         border: 0px;
+        display: block;
     }
     .logozone {
         position: absolute;
@@ -180,7 +182,6 @@
         color: #fff;
         text-align: right;
         margin-bottom: 0px;
-        width: 300px;
         z-index: 999;
     }
     .tracker a {
@@ -190,8 +191,6 @@
         position: absolute;
         top: 0;
         left: 265px;
-        padding-right: 55px;
-        padding-bottom: 55px;
         color: #aaa;
     }
     .copyright a {
