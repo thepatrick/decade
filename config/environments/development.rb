@@ -11,7 +11,6 @@ Decade::Application.configure do
 
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
-  config.action_view.debug_rjs             = true
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
@@ -24,7 +23,7 @@ Decade::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 end
 
-dev_base = 'localhost:3000'
+dev_base = 'localhost:5000'
 
 DC_CONFIG[:PHOTOSTORE] = "/Users/patrick/SourceCache/git/decade/public/images/"
 DC_CONFIG[:PHOTOBASE] = "http://"+dev_base+"/decade/public/images/"

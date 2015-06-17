@@ -1,12 +1,16 @@
 source 'http://rubygems.org'
+ruby "2.2.1"
 
-gem 'rails', '3.0.20'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'rails', '4.2.1'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'httparty'
 
 gem "authlogic"
 gem "rails3-generators"
+
+gem 'puma'
+
+gem 'dynamic_form'
+
+gem 'responders', '~> 2.0'

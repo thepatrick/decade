@@ -9,15 +9,15 @@ Decade::Application.routes.draw do
   
   
   
-  match ':y/:m/:d/photo.small', :controller => 'public', :action => "small_photo", :y => /\d{4}/, :m => /\d{1,2}/, :d => /\d{1,2}/
-  match ':y/:m/:d/photo', :controller => 'public', :action => "photo", :y => /\d{4}/, :m => /\d{1,2}/, :d => /\d{1,2}/
-  match ':y/:m/:d', :controller => 'public', :action => "view", :y => /\d{4}/, :m => /\d{1,2}/, :d => /\d{1,2}/
-  match ':y/:m', :controller => 'public', :action => "month", :y => /\d{4}/, :m => /\d{1,2}/
-  match ':y', :controller => 'public', :action => "year", :y => /\d{4}/
+  get ':y/:m/:d/photo.small', :controller => 'public', :action => "small_photo", :y => /\d{4}/, :m => /\d{1,2}/, :d => /\d{1,2}/
+  get ':y/:m/:d/photo', :controller => 'public', :action => "photo", :y => /\d{4}/, :m => /\d{1,2}/, :d => /\d{1,2}/
+  get ':y/:m/:d', :controller => 'public', :action => "view", :y => /\d{4}/, :m => /\d{1,2}/, :d => /\d{1,2}/
+  get ':y/:m', :controller => 'public', :action => "month", :y => /\d{4}/, :m => /\d{1,2}/
+  get ':y', :controller => 'public', :action => "year", :y => /\d{4}/
   
-  match 'archive', :controller => 'public', :action => 'archive'
-  match 'about', :controller => 'public', :action => 'about'
-  match 'syndicate', :controller => 'public', :action => 'syndicate'
+  get 'archive', :controller => 'public', :action => 'archive'
+  get 'about', :controller => 'public', :action => 'about'
+  get 'syndicate', :controller => 'public', :action => 'syndicate'
   
   root :to => 'public#index'
 
