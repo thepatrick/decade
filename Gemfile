@@ -3,7 +3,7 @@ ruby "2.2.1"
 
 gem 'rails', '4.2.1'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+# gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'httparty'
 
 gem "authlogic"
