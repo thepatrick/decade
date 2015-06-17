@@ -14,3 +14,5 @@ gem 'puma'
 gem 'dynamic_form'
 
 gem 'responders', '~> 2.0'
+
+gem 'pg'
